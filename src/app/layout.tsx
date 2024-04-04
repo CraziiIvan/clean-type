@@ -2,6 +2,7 @@ import "./globals.css"
 import { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import Header from "@/components/header/Header";
+import { OptionStoreProvider } from "@/libs/StoreContext";
 
 export const metadata: Metadata = {
   title: "Clean Type",
@@ -15,10 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <OptionStoreProvider>
       <body className={GeistSans.className}>
         <Header/>
         {children}
       </body>
+      </OptionStoreProvider>
     </html>
   );
 }

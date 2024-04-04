@@ -2,14 +2,16 @@ import { Clock, Text } from "lucide-react";
 import styles from "./Option.module.css";
 import { GeistSans } from "geist/font/sans";
 import { Dispatch, SetStateAction, useEffect } from "react";
+import useOptionStore from "@/libs/useContext";
 
 type TOptionsProps = {
   title: string;
-  active: string;
-  setActive: Dispatch<SetStateAction<string>>;
 };
 
-export default function Option({ title, active, setActive }: TOptionsProps) {
+export default function Option({ title }: TOptionsProps) {
+
+  const { active, setActive } = useOptionStore()
+
   function setActiveHandler(title: string) {
     setActive(title.toLocaleLowerCase());
   }

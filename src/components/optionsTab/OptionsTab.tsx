@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react"
 import styles from "./OptionsTab.module.css"
 import Option from "./Option"
+import useOptionStore from "@/libs/useContext"
 
 export default function OptionsTab() {
 
-    const [ active, setActive ] = useState<string>("quote")
+    const {active} = useOptionStore()
 
     useEffect(() => {
         console.log(active)
@@ -14,8 +15,8 @@ export default function OptionsTab() {
 
     return (
         <div className={`${styles.optionsTab} ${active === "quote" && styles.active}`}>
-            <Option title="Quote" active={active} setActive={setActive} />
-            <Option title="Timer" active={active} setActive={setActive} />
+            <Option title="Quote"/>
+            <Option title="Timer" />
         </div>
     )
 }
