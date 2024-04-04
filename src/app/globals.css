@@ -20,7 +20,7 @@ body {
 
 body {
   margin: 0;
-  padding: 28px;
+  padding: 24px;
   max-width: var(--max-width);
   margin-inline: auto;
   background-color: var(--bg-color);
