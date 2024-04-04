@@ -1,0 +1,60 @@
+.options, .optionsBtn {
+    display: flex;
+    align-items: center;
+}
+
+.options {
+    height: 36px;
+    padding-inline: 16px;
+    /* max-width: 58px; */
+    overflow-x: hidden;
+    border-radius: 18px;
+
+}
+
+.options > button {
+    color: var(--subtle-text-color);
+    transition: color .2s ease-out;
+}
+
+.options:hover > button {
+    color: var(--text-color);
+}
+
+.activeOption {
+    border: 1px solid var(--border-color);
+    background-color: #202020;
+}
+
+
+.activeOption > button {
+    color: var(--text-color);
+}
+
+.optionsBtn {
+    margin-right: 16px;
+    column-gap: 8px;
+}
+
+/* .optionsBtn > .optionsIcon {
+    color: var(--subtle-text-color);
+} */
+
+.optionsList {
+    border-left: 1px solid var(--border-color);
+    padding-left: 12px;
+
+    display: flex;
+    column-gap: 12px;
+}
+
+.optionItems {
+    color: var(--inactive-text-color);
+    cursor: pointer;
+
+    transition: color .2s ease-out;
+}
+
+.optionItems:hover {
+    color: var(--text-color);
+}

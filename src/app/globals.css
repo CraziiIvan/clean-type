@@ -2,13 +2,14 @@
   --max-width: 900px;
 
   --bg-color: #040404;
-  --subtle-bg-color: #202020;
+  --component-bg-color: #121212;
 
-  --border-color: #3b3b3b;
-  --subtle-border-color: #2d2d2d;
+  --border-color: #2d2d2d;
+  --subtle-border-color: #202020;
 
+  --text-color: #fff;
   --subtle-text-color: #ababab;
-  --text-color: #e3e3e3;
+  --inactive-text-color: #747474;
 }
 
 html,
@@ -35,11 +36,18 @@ a {
 }
 
 button {
+  padding: 0;
   background: none;
   outline: none;
   border: none;
   cursor: pointer;
   color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,6 +1,5 @@
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -8,14 +7,22 @@
     font-size: 18px;
 }
 
+.tabContainer {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+}
+
 .userBtn {
     height: 32px;
-    padding-inline: 8px;
+    width: 32px;
     border-radius: 12px;
-    background-color: var(--subtle-bg-color);
+    background-color: var(--component-bg-color);
     border: 1px solid var(--subtle-border-color);
 
     display: flex;
+    justify-content: center;
     align-items: center;
     column-gap: 8px;
     color: var(--subtle-text-color);
@@ -24,5 +31,5 @@
 }
 
 .userBtn:hover {
-    color: var(--fg-color);
+    color: var(--text-color);
 }
