@@ -1,8 +1,8 @@
 import "./globals.css"
 import { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
-import Header from "@/components/header/Header";
-import { OptionStoreProvider } from "@/libs/StoreContext";
+import { OptionStoreProvider } from "@/utils/StoreContext";
+import { cn } from "@/utils/utils";
 
 export const metadata: Metadata = {
   title: "Clean Type",
@@ -17,8 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <OptionStoreProvider>
-      <body className={GeistSans.className}>
-        <Header/>
+      <body className={cn(GeistSans.className, "bg-black p-6 max-w-5xl mx-auto")}>
         {children}
       </body>
       </OptionStoreProvider>

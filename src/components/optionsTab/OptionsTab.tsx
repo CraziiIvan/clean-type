@@ -1,22 +1,12 @@
-"use client"
-
-import { useEffect, useState } from "react"
-import styles from "./OptionsTab.module.css"
 import Option from "./Option"
-import useOptionStore from "@/libs/useContext"
+import { cn } from "@/utils/utils"
 
 export default function OptionsTab() {
 
-    const {active} = useOptionStore()
-
-    useEffect(() => {
-        console.log(active)
-    }, [active])
-
     return (
-        <div className={`${styles.optionsTab} ${active === "quote" && styles.active}`}>
-            <Option title="Quote"/>
-            <Option title="Timer" />
+        <div className={cn("bg-neutral-950 rounded-full flex text-sm border border-neutral-900")}>
+            <Option title="Quote" options={[ 10, 25, 50, 100]} />
+            <Option title="Timer" options={[ 15, 30, 60, 120]} />
         </div>
     )
 }
