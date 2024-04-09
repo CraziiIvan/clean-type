@@ -1,7 +1,7 @@
 "use client"
 
 import { useContext } from "react";
-import { OptionStoreContext } from "./StoreContext";
+import { OptionStoreContext } from "@/providers/StoreContext";
 import { useStore } from "zustand";
 
 export default function useOptionStore() {

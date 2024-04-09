@@ -1,10 +1,10 @@
 "use client"
 
-import { TOptionStore, createOptionStore, initOptionStore } from '@/optionStore'
+import { TStore, createOptionStore, initOptionStore } from '@/store'
 import { type ReactNode, createContext, useRef } from 'react'
 import { type StoreApi } from 'zustand'
 
-export const OptionStoreContext = createContext<StoreApi<TOptionStore> | undefined>(undefined)
+export const OptionStoreContext = createContext<StoreApi<TStore> | undefined>(undefined)
 
 export type TStoreProviderProps = {
     children: ReactNode
@@ -12,7 +12,7 @@ export type TStoreProviderProps = {
 
 export function OptionStoreProvider({children}: TStoreProviderProps) {
 
-    const storeRef = useRef<StoreApi<TOptionStore>>()
+    const storeRef = useRef<StoreApi<TStore>>()
     if (!storeRef.current) {
       storeRef.current = createOptionStore(initOptionStore())
     }

@@ -1,7 +1,7 @@
 import "./globals.css"
 import { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
-import { OptionStoreProvider } from "@/utils/StoreContext";
+import { OptionStoreProvider } from "@/providers/StoreContext";
 import { cn } from "@/utils/utils";
 
 export const metadata: Metadata = {
@@ -16,11 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <OptionStoreProvider>
       <body className={cn(GeistSans.className, "bg-black p-6 max-w-5xl mx-auto")}>
+      <OptionStoreProvider>
         {children}
-      </body>
       </OptionStoreProvider>
+      </body>
     </html>
   );
 }
