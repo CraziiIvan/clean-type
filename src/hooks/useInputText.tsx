@@ -4,20 +4,21 @@ import { useState, useEffect } from 'react';
 
 export default function useInputText() {
 
-  const [ index, setIndex ] = useState<number>(0)
+  const [ wordIndex, setWordIndex ] = useState<number>(0)
   const [ wordList, setWordList ] = useState<string[]>([])
   const [ text, setText] = useState<string>('');
   
   useEffect(() => {
     
     function handleKeyPress (event: KeyboardEvent) {
+
+      if (event.key === " ") {
+        setText(prevText => prevText.concat(event.key))
+        return
+      }
   
       if (/^[a-zA-Z]*$/.test(event.key)) {
         setText(prevTexts => prevTexts.concat(event.key));
-      } else if ( event.key === " " ) {
-        setWordList(preWords => [ ...preWords, text])
-        setIndex(prevIndex => prevIndex += 1)
-        setText("")
       }
     };
 
@@ -28,5 +29,5 @@ export default function useInputText() {
     };
   }, [text]);
 
-  return { wordList, text, index};
+  return { wordList, text, wordIndex};
 };

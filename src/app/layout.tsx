@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(GeistSans.className, "bg-black p-6 max-w-5xl mx-auto")}>
+      <body className={cn(GeistSans.className, "bg-neutral-950 p-6 max-w-5xl mx-auto")}>
       <OptionStoreProvider>
         {children}
       </OptionStoreProvider>
