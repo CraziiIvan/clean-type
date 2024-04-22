@@ -4,7 +4,7 @@ import OptionsTab from "../optionsTab/OptionsTab";
 export default function Header() {
   return (
     <header className="relative z-20 flex items-center w-full">
-      <div className="text-lg text-white">Ct</div>
+      <div className="text-lg text-white cursor-pointer">Ct</div>
       <div className="flex justify-center grow">
         <OptionsTab />
       </div>

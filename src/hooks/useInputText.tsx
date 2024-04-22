@@ -4,20 +4,18 @@ import { useState, useEffect } from 'react';
 
 export default function useInputText() {
 
-  const [ wordIndex, setWordIndex ] = useState<number>(0)
-  const [ wordList, setWordList ] = useState<string[]>([])
   const [ text, setText] = useState<string>('');
   
   useEffect(() => {
     
     function handleKeyPress (event: KeyboardEvent) {
 
-      if (event.key === " ") {
-        setText(prevText => prevText.concat(event.key))
+      if (event.key === "Backspace") {
+        setText(prevText => prevText.slice(0, -1))
         return
       }
   
-      if (/^[a-zA-Z]*$/.test(event.key)) {
+      if (/^[a-zA-Z\s]*$/.test(event.key)) {
         setText(prevTexts => prevTexts.concat(event.key));
       }
     };
@@ -29,5 +27,5 @@ export default function useInputText() {
     };
   }, [text]);
 
-  return { wordList, text, wordIndex};
+  return { text, setText };
 };

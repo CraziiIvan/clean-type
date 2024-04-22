@@ -3,7 +3,8 @@
 import useOptionStore from "@/hooks/useContext";
 import useInputText from "@/hooks/useInputText";
 import { cn } from "@/utils/utils";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 type TWordsProps = {
   generatedWords: string;
@@ -12,18 +13,15 @@ type TWordsProps = {
 export default function InputWords({ generatedWords }: TWordsProps) {
   const textRef = useRef<HTMLParagraphElement>(null);
 
-  const { setTextWidth } = useOptionStore()
-
   const { text } = useInputText();
 
   useEffect(() => {
     if (textRef) {
-        setTextWidth(textRef.current?.clientWidth || 0)
     }
   }, [text])
 
   return (
-    <p
+    <motion.p
       ref={textRef}
       className="absolute px-1 text-2xl tracking-widest text-white top-16"
     >
@@ -38,6 +36,6 @@ export default function InputWords({ generatedWords }: TWordsProps) {
             {letter}
           </span>
         ))}
-    </p>
+    </motion.p>
   );
 }
